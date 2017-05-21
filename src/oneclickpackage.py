@@ -137,7 +137,7 @@ class Example(wx.Frame):
             path = dlg.GetPath()
             str(self.st14.SetLabel(str(path).encode('utf-8').encode('ascii')))
             self.attpath=str(path).encode('utf-8').encode('ascii')
-            print self.attpath
+            print(self.attpath)
         dlg.Destroy()
 
     def onPack(self,event):
@@ -185,7 +185,7 @@ def makedirectories(name):
         os.system('mkdir ' + name + '\\' + name)
         os.system('type NUL > ' + name + '\\' + name + '\\' + '__init__.py')
         return 'done'
-    except Exception,e:
+    except Exception as e:
         info='not done'
         return info
 
@@ -209,7 +209,7 @@ def createfiles(name,version,github,author,authemail,desc,keylist,reqlist,ath):
             for j in range(0,5-rth):
                 top.append(' ')
                 
-        print pop,top,keylist,reqlist
+        print(pop,top,keylist,reqlist)
         with open(name+'\\setup.py',"w+")as file:
             file.write('''
 from setuptools import setup
@@ -236,7 +236,7 @@ setup(
         os.chdir(name)
         info='done'
         return info
-    except Exception,e:
+    except Exception as e:
         info='not done'
         return info
 
